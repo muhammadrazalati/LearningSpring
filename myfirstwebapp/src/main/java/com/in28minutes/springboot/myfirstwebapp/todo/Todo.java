@@ -2,11 +2,18 @@ package com.in28minutes.springboot.myfirstwebapp.todo;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
-public class Todo {
+@Entity   //Bean -> database: map values automatically from here to database and also create table automatically in h2 db with default name of class unless name is suggested as @Entity(name = "todoabc")
+public class Todo { 
 	
+	@Id
+	@GeneratedValue
 	private int id;
+	//@Column(name = "name") in this way name of column can also be suggested
 	private String userName;
 	@Size(min = 10,message = "Enter atleast 10 char")
 	private String description;
