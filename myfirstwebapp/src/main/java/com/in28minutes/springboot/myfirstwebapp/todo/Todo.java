@@ -14,16 +14,17 @@ public class Todo {
 	@GeneratedValue
 	private int id;
 	//@Column(name = "name") in this way name of column can also be suggested
-	private String userName;
+	private String username;
 	@Size(min = 10,message = "Enter atleast 10 char")
 	private String description;
 	private LocalDate targetDate;
 	private boolean done;
 	
+	public Todo() {};
 	public Todo(int id, String userName, String description, LocalDate targetDate, boolean done) {
 		super();
 		this.id = id;
-		this.userName = userName;
+		this.username = userName;
 		this.description = description;
 		this.targetDate = targetDate;
 		this.done = done;
@@ -38,11 +39,11 @@ public class Todo {
 	}
 
 	public String getUserName() {
-		return userName;
+		return username;
 	}
 
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.username = userName;
 	}
 
 	public String getDescription() {
@@ -71,7 +72,7 @@ public class Todo {
 
 	@Override
 	public String toString() {
-		return "Todo [id=" + id + ", userName=" + userName + ", description=" + description + ", targetDate="
+		return "Todo [id=" + id + ", userName=" + username + ", description=" + description + ", targetDate="
 				+ targetDate + ", done=" + done + "]";
 	}
 	
